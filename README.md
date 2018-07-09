@@ -1,2 +1,2 @@
 # wito-bot
-Simple Discord bot for custom server
+Simple Discord bot for custom server.ñ.

@@ -13,6 +13,10 @@ async def on_message(message):
     if message.content.startswith('!hello'):
         msg = 'Hello {0.author.mention}'.format(message)
         await client.send_message(message.channel, msg)
+    
+    if message.content.startswith('!ping'):
+        msg = 'Pong !!'.format(message)
+        await client.send_message(message.channel, msg)
 
 @client.event
 async def on_ready():

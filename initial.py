@@ -18,9 +18,15 @@ async def on_message(message):
         msg = 'Pong !!'.format(message)
         await client.send_message(message.channel, msg)
 
+    if message.content.startswith('!wito'):
+        msg = 'Wito huele a cerrao muy fuerte :DansGame:'.format(message)
+        await client.send_message(message.channel, msg)
+
 @client.event
 async def on_ready():
     print('Wito-Bot on Duty')
     print(client.user.name)
     print(client.user.id)
     print('------')
+
+client.run(TOKEN)

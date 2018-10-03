@@ -1,4 +1,6 @@
 import discord
+import urllib.request
+import os
 
 TOKEN = 'APP TOKEN'
 
@@ -21,6 +23,11 @@ async def on_message(message):
     if message.content.startswith('!wito'):
         msg = 'Wito huele a cerrao muy fuerte :DansGame:'.format(message)
         await client.send_message(message.channel, msg)
+
+    if message.content.startswith('!loli'):
+        urllib.request.urlretrieve('https://i.redd.it/jcn2v6seyyo01.jpg', './loli.jpg')
+        await client.send_file(message.channel, './loli.jpg')
+        os.remove('./loli.jpg')
 
 @client.event
 async def on_ready():

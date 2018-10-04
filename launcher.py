@@ -25,6 +25,10 @@ async def on_message(message):
         await client.send_file(message.channel, './loli.jpg')
         os.remove('./loli.jpg')
 
+    if message.content.startswith('!pacman'):
+        msg = 'kiere un pokito¿¿¿¿¿ :p'.format(message)
+        await client.send_message(message.channel, msg)
+
 @client.event
 async def on_ready():
     print('NaM-Bot Started')

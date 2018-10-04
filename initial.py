@@ -20,10 +20,6 @@ async def on_message(message):
         msg = 'Pong !!'.format(message)
         await client.send_message(message.channel, msg)
 
-    if message.content.startswith('!wito'):
-        msg = 'Wito huele a cerrao muy fuerte :DansGame:'.format(message)
-        await client.send_message(message.channel, msg)
-
     if message.content.startswith('!loli'):
         urllib.request.urlretrieve('https://i.redd.it/jcn2v6seyyo01.jpg', './loli.jpg')
         await client.send_file(message.channel, './loli.jpg')
@@ -31,7 +27,7 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
-    print('Wito-Bot on Duty')
+    print('NaM-Bot on Duty')
     print(client.user.name)
     print(client.user.id)
     print('------')

@@ -27,7 +27,7 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
-    print('NaM-Bot on Duty')
+    print('NaM-Bot Started')
     print(client.user.name)
     print(client.user.id)
     print('------')

@@ -1,36 +1,39 @@
 import discord
 import urllib.request
 import os
+import asyncio
 
 TOKEN = 'APP TOKEN'
 
 client = discord.Client()
 
 @client.event
-async def on_message(message):
+@asyncio.coroutine 
+def on_message(message):
     #the bot doesnt talk to itself
     if message.author == client.user:
         return
 
     if message.content.startswith('!hello'):
         msg = 'Hello {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
+        yield from client.send_message(message.channel, msg)
     
     if message.content.startswith('!ping'):
         msg = 'Pong !!'.format(message)
-        await client.send_message(message.channel, msg)
+        yield from client.send_message(message.channel, msg)
 
     if message.content.startswith('!loli'):
         urllib.request.urlretrieve('https://i.redd.it/jcn2v6seyyo01.jpg', './loli.jpg')
-        await client.send_file(message.channel, './loli.jpg')
+        yield from client.send_file(message.channel, './loli.jpg')
         os.remove('./loli.jpg')
 
     if message.content.startswith('!pacman'):
         msg = 'kiere un pokito¿¿¿¿¿ :p'.format(message)
-        await client.send_message(message.channel, msg)
+        yield from client.send_message(message.channel, msg)
 
 @client.event
-async def on_ready():
+@asyncio.coroutine 
+def on_ready():
     print('NaM-Bot Started')
     print(client.user.name)
     print(client.user.id)

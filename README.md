@@ -1,4 +1,2 @@
-# NaM-Bot
+# MaN-Bot
 Simple Discord bot for custom server.
-
-test

@@ -35,11 +35,6 @@ def on_message(message):
     if message.content.startswith('!test'):
         msg = 'Este comando es un test'.format(message)
         yield from client.send_message(message.channel, msg)
-        
-    if message.content.startswith('!exit'):
-        msg = 'Cerrando bot bip bup'.format(message)
-        yield from client.send_message(message.channel, msg)
-        sys.exit()
 
 @client.event
 @asyncio.coroutine

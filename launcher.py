@@ -8,7 +8,7 @@ TOKEN = 'APP TOKEN'
 client = discord.Client()
 
 @client.event
-@asyncio.coroutine 
+@asyncio.coroutine
 def on_message(message):
     #the bot doesnt talk to itself
     if message.author == client.user:
@@ -17,7 +17,7 @@ def on_message(message):
     if message.content.startswith('!hello'):
         msg = 'Hello {0.author.mention}'.format(message)
         yield from client.send_message(message.channel, msg)
-    
+
     if message.content.startswith('!ping'):
         msg = 'Pong !!'.format(message)
         yield from client.send_message(message.channel, msg)
@@ -31,8 +31,12 @@ def on_message(message):
         msg = 'kiere un pokito¿¿¿¿¿ :p'.format(message)
         yield from client.send_message(message.channel, msg)
 
+    if message.content.startswith('!test'):
+        msg = 'Este comando es un test'.format(message)
+        yield from client.send_message(message.channel, msg)
+
 @client.event
-@asyncio.coroutine 
+@asyncio.coroutine
 def on_ready():
     print('NaM-Bot Started')
     print(client.user.name)

@@ -23,7 +23,7 @@ def on_message(message):
         yield from client.send_message(message.channel, msg)
 
     if message.content.startswith('!loli'):
-        urllib.request.urlretrieve('https://i.redd.it/jcn2v6seyyo01.jpg', './loli.jpg')
+        msg = 'No se permiten lolitas en este repositorio'.format(message)
         yield from client.send_file(message.channel, './loli.jpg')
         os.remove('./loli.jpg')
 
@@ -38,6 +38,7 @@ def on_message(message):
 @client.event
 @asyncio.coroutine
 def on_ready():
+    print('--- STARTED BOT ---')
     print('NaM-Bot Started')
     print(client.user.name)
     print(client.user.id)

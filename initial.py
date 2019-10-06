@@ -28,6 +28,13 @@ async def on_message(message):
         urllib.request.urlretrieve('https://i.redd.it/jcn2v6seyyo01.jpg', './loli.jpg')
         await client.send_file(message.channel, './loli.jpg')
         os.remove('./loli.jpg')
+        
+    # Añadido comando chingon que dice que onda
+    if message.content.startswith('!queonda'):
+        urllib.request.urlretrieve('https://images7.memedroid.com/images/UPLOADED45/545449cc11825.jpeg', './onda.jpg')
+        await client.send_file(message.channel, './loli.jpg')
+        os.remove('./loli.jpg')
+        
 
 @client.event
 async def on_ready():

@@ -1,0 +1,11 @@
+import tweepy
+import urllib.request
+
+CONSUMER_KEY = 'YOUR CONSUMER_KEY'
+CONSUMER_SECRET = 'YOUR CONSUMER_SECRET'
+ACCESS_KEY = 'YOUR ACCESS_KEY'
+ACCESS_SECRET = 'YOUR ACCESS_SECRET'
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+api = tweepy.API(auth)

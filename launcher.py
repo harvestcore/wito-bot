@@ -3,7 +3,6 @@ import urllib.request
 import os
 import asyncio
 
-
 TOKEN = 'APP TOKEN'
 
 client = discord.Client()
@@ -25,8 +24,16 @@ def on_message(message):
 
     if message.content.startswith('!loli'):
         msg = 'No se permiten lolitas en este repositorio'.format(message)
-        yield from client.send_file(message.channel, './loli.jpg')
-        os.remove('./loli.jpg')
+        yield from client.send_message(message.channel, msg)
+
+    if message.content.startswith('!loli2'):
+        import api from tweet
+        msg = 'tuiteando tremenda loli...'.format(message)
+        img = './loli.jpg'
+        urllib.request.urlretrieve('https://i.redd.it/jcn2v6seyyo01.jpg', img)
+        api.update_with_media(img, 'oniiiichan :v')
+        os.remove(img)
+        yield from client.send_message(message.channel, msg)
 
     if message.content.startswith('!pacman'):
         msg = 'kiere un pokito¿¿¿¿¿ :p'.format(message)
